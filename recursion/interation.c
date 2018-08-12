@@ -9,6 +9,8 @@ void decToBin(unsigned int n){
 	printf("%d", n%2);
 }
 
+void towerOfHanoi()
+
 int main(){
 	decToBin(10);
 	return 0;
