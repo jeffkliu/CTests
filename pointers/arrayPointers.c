@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <stdlib.h>
+#define MAX 30
 
 void printArray(char *p_arr){
 	int currVal, i=0;
@@ -14,13 +16,32 @@ void printArray(char *p_arr){
 	}
 }
 
+void splitArray(char str[], char first[], char second[]){
+	int i = 0;
+	int j = 0;
+
+	while(str[i] != '*'){
+		first[j] = str[i];
+		i++; j++;
+	}
+	j = 0; i++;
+
+	while(str[i] != '\0'){
+		second[j] = str[i];
+		i++;j++;
+	}
+}
+
 int main(){
 	char x[]= {'a','B','C','d','e','F','g','H','L'};
+	char str[] = "book*abacus";
+	char first[MAX];
+	char second[MAX];
+	splitArray(str, first, second);
+	printf("First array: %s\n", first);
+	printf("Second array: %s\n", second);
 
-	char input[100];
-	scanf("%[^\n]", input);
 
-	printArray(input);
 
 	return 0;
 }
